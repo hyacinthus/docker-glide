@@ -1,5 +1,7 @@
 FROM golang:1.7
 
+ENV TZ Asia/Shanghai
+
 # install glide
 ENV GLIDE_VERSION 0.12.3
 
