@@ -21,4 +21,3 @@ CMD ["go", "test"]
 
 ONBUILD COPY . /go/src/app
 ONBUILD RUN glide install
-ONBUILD RUN go install
