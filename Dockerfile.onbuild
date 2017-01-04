@@ -16,5 +16,6 @@ RUN wget "$GLIDE_DOWNLOAD_URL" -O glide.tar.gz \
 # this will ideally be built by the ONBUILD below ;)
 CMD ["go-wrapper", "run"]
 
+ONBUILD COPY . /go/src/app
 ONBUILD RUN glide install
 ONBUILD RUN go-wrapper install
