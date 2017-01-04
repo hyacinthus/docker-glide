@@ -12,14 +12,3 @@ RUN wget "$GLIDE_DOWNLOAD_URL" -O glide.tar.gz \
     && mv linux-amd64/glide /usr/bin/ \
     && rm -r linux-amd64 \
     && rm glide.tar.gz
-
-# workdir
-
-RUN mkdir -p /go/src/app
-WORKDIR /go/src/app
-
-# this will ideally be built by the ONBUILD below ;)
-CMD ["go", "test"]
-
-ONBUILD COPY . /go/src/app
-ONBUILD RUN glide install
